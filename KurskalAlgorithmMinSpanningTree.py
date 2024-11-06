@@ -1,19 +1,79 @@
 class Graph:
+    """
+    A class to represent a graph using an edge list representation.
+
+    Attributes:
+    -----------
+    V : int
+        Number of vertices in the graph.
+    graph : list
+        List to store the graph edges in the form [u, v, w] where u and v are vertices and w is the weight of the edge.
+    """
+
     def __init__(self, vertices):
+        """
+        Constructs all the necessary attributes for the graph object.
+
+        Parameters:
+        -----------
+        vertices : int
+            Number of vertices in the graph.
+        """
         self.V = vertices  # Number of vertices
         self.graph = []  # Default dictionary to store graph
 
     def add_edge(self, u, v, w):
+        """
+        Adds an edge to the graph.
+
+        Parameters:
+        -----------
+        u : int
+            The starting vertex of the edge.
+        v : int
+            The ending vertex of the edge.
+        w : int
+            The weight of the edge.
+        """
         self.graph.append([u, v, w])  # Edge from u to v with weight w
 
     # Find function for union-find
     def find(self, parent, i):
+        """
+        A function to find the set of an element i using path compression.
+
+        Parameters:
+        -----------
+        parent : list
+            The parent list where parent[i] is the parent of i.
+        i : int
+            The element to find the set of.
+
+        Returns:
+        --------
+        int
+            The representative of the set containing i.
+        """
         if parent[i] != i:
             parent[i] = self.find(parent, parent[i])  # Path compression
         return parent[i]
 
     # Union function for union-find
     def union(self, parent, rank, x, y):
+        """
+        A function that does union of two sets of x and y using union by rank.
+
+        Parameters:
+        -----------
+        parent : list
+            The parent list where parent[i] is the parent of i.
+        rank : list
+            The rank list where rank[i] is the rank of the set containing i.
+        x : int
+            The first element.
+        y : int
+            The second element.
+        """
         xroot = self.find(parent, x)
         yroot = self.find(parent, y)
 
@@ -28,6 +88,18 @@ class Graph:
             rank[xroot] += 1
 
     def kruskal_mst(self):
+        """
+        Function to construct and print the Minimum Spanning Tree (MST) using Kruskal's algorithm.
+        The function follows these steps:
+        1. Sort all the edges in non-decreasing order of their weight.
+        2. Pick the smallest edge. Check if it forms a cycle with the spanning tree formed so far.
+           If cycle is not formed, include this edge. Else, discard it.
+        3. Repeat step 2 until there are (V-1) edges in the spanning tree.
+
+        Prints:
+        -------
+        The edges in the constructed MST and their weights.
+        """
         result = []  # Store the resultant MST
         i, e = 0, 0  # Indices for sorted edges and result[]
 

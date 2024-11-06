@@ -1,10 +1,43 @@
 class Node:
+    """
+    A class used to represent a Node in a Singly Linked List.
+    Attributes
+    ----------
+    data : any
+        The data stored in the node.
+    next : Node or None
+        The reference to the next node in the linked list.
+    Methods
+    -------
+    __init__(self, data):
+        Initializes the Node with the given data and sets the next reference to None.
+    """
+
     def __init__(self, data):
         self.data = data  # Store data
         self.next = None  # Reference to the next node
 
 
 class LinkedList:
+    """
+    A class used to represent a Singly Linked List.
+    ...
+    Attributes
+    ----------
+    head : Node or None
+        The head node of the linked list.
+    Methods
+    -------
+    __init__():
+        Initializes the linked list with an empty head.
+    insert_at_beginning(data):
+        Inserts a new node with the specified data at the beginning of the list.
+    insert_at_end(data):
+        Inserts a new node with the specified data at the end of the list.
+    traverse():
+        Traverses the linked list and prints the data of each node.
+    """
+    
     def __init__(self):
         self.head = None  # Initialize the head
 

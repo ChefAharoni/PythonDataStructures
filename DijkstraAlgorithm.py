@@ -2,6 +2,15 @@ import heapq
 
 
 def dijkstra(graph, start):
+    """
+    Implements Dijkstra's algorithm to find the shortest paths from a starting vertex to all other vertices in a weighted graph.
+    Parameters:
+    graph (dict): A dictionary where keys are vertices and values are lists of tuples (neighbor, weight) representing the edges.
+    start (any): The starting vertex.
+    Returns:
+    dict: A dictionary where keys are vertices and values are the shortest distance from the start vertex to that vertex.
+    """
+
     distances = {vertex: float("inf") for vertex in graph}  # Initialize distances
     distances[start] = 0
     priority_queue = [(0, start)]  # Min-heap based on distance

@@ -1,8 +1,30 @@
 def quick_sort(arr):
+    """
+    Sorts an array in place using the QuickSort algorithm.
+
+    Parameters:
+    arr (list): The list of elements to be sorted.
+
+    Returns:
+    None
+    """
+
     _quick_sort_helper(arr, 0, len(arr) - 1)
 
 
 def _quick_sort_helper(arr, low, high):
+    """
+    Helper function for the QuickSort algorithm that recursively sorts sub-arrays.
+
+    Parameters:
+    arr (list): The list of elements to be sorted.
+    low (int): The starting index of the sub-array to be sorted.
+    high (int): The ending index of the sub-array to be sorted.
+
+    Returns:
+    None
+    """
+
     if low < high:
         # pi is partitioning index
         pi = _partition(arr, low, high)
@@ -11,6 +33,18 @@ def _quick_sort_helper(arr, low, high):
 
 
 def _partition(arr, low, high):
+    """
+    Partitions the array around a pivot element and returns the index of the pivot.
+
+    Parameters:
+    arr (list): The list of elements to be partitioned.
+    low (int): The starting index of the sub-array to be partitioned.
+    high (int): The ending index of the sub-array to be partitioned.
+
+    Returns:
+    int: The index of the pivot element after partitioning.
+    """
+
     pivot = arr[high]  # Pivot
     i = low - 1  # Index of smaller element
     for j in range(low, high):

@@ -1,4 +1,16 @@
 def knapsack(capacity, weights, values, n):
+    """
+    Solves the 0/1 Knapsack problem using dynamic programming.
+
+    Parameters:
+    capacity (int): The maximum weight capacity of the knapsack.
+    weights (list of int): A list of weights of the items.
+    values (list of int): A list of values of the items.
+    n (int): The number of items.
+
+    Returns:
+    int: The maximum value that can be put in a knapsack of given capacity.
+    """
     K = [[0 for x in range(capacity + 1)] for x in range(n + 1)]
 
     # Build table K[][] in bottom-up manner

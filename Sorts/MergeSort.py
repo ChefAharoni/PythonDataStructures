@@ -1,4 +1,20 @@
 def merge_sort(arr):
+    """
+    Sorts an array in ascending order using the merge sort algorithm.
+
+    Merge sort is a divide-and-conquer algorithm that splits the array into two halves,
+    recursively sorts each half, and then merges the sorted halves back together.
+
+    Args:
+        arr (list): The list of elements to be sorted.
+
+    Example:
+        >>> numbers = [38, 27, 43, 3, 9, 82, 10]
+        >>> merge_sort(numbers)
+        >>> print(numbers)
+        [3, 9, 10, 27, 38, 43, 82]
+    """
+
     if len(arr) > 1:
         mid = len(arr) // 2
         left_half = arr[:mid]

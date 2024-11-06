@@ -1,4 +1,20 @@
 class TreeNode:
+    """
+    A class used to represent a Node in a Binary Tree.
+    Attributes
+    ----------
+    value : any
+        The value stored in the node.
+    left : TreeNode, optional
+        A reference to the left child node (default is None).
+    right : TreeNode, optional
+        A reference to the right child node (default is None).
+    Methods
+    -------
+    __init__(self, value):
+        Initializes the TreeNode with a value and optional left and right children.
+    """
+    
     def __init__(self, value):
         self.value = value
         self.left = None
@@ -7,6 +23,18 @@ class TreeNode:
 
 # Preorder Traversal: Root -> Left -> Right
 def preorder(root):
+    """
+    Perform a preorder traversal of a binary tree.
+    In a preorder traversal, the nodes are recursively visited in this order:
+    1. Visit the root node.
+    2. Traverse the left subtree.
+    3. Traverse the right subtree.
+    Args:
+        root (TreeNode): The root node of the binary tree.
+    Returns:
+        None
+    """
+
     if root:
         print(root.value, end=" ")
         preorder(root.left)
@@ -15,6 +43,18 @@ def preorder(root):
 
 # Inorder Traversal: Left -> Root -> Right
 def inorder(root):
+    """
+    Perform an in-order traversal of a binary tree.
+    An in-order traversal visits the nodes of the tree in the following order:
+    1. Traverse the left subtree.
+    2. Visit the root node.
+    3. Traverse the right subtree.
+    Args:
+        root (TreeNode): The root node of the binary tree.
+    Returns:
+        None
+    """
+
     if root:
         inorder(root.left)
         print(root.value, end=" ")
@@ -23,6 +63,18 @@ def inorder(root):
 
 # Postorder Traversal: Left -> Right -> Root
 def postorder(root):
+    """
+    Perform a postorder traversal of a binary tree.
+    In postorder traversal, the nodes are recursively visited in this order:
+    1. Left subtree
+    2. Right subtree
+    3. Root node
+    Args:
+        root (Node): The root node of the binary tree.
+    Returns:
+        None: This function prints the value of each node during the traversal.
+    """
+
     if root:
         postorder(root.left)
         postorder(root.right)

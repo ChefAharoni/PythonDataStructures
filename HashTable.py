@@ -1,4 +1,28 @@
+
 class HashTable:
+    """
+    A simple hash table implementation using chaining for collision resolution.
+
+    Attributes:
+        size (int): The size of the hash table.
+        table (list): The hash table, implemented as a list of lists.
+
+    Methods:
+        __init__(size=10):
+            Initializes the hash table with a given size.
+        
+        _hash(key):
+            Computes the hash value for a given key.
+        
+        insert(key, value):
+            Inserts a key-value pair into the hash table. If the key already exists, updates its value.
+        
+        get(key):
+            Retrieves the value associated with a given key. Returns None if the key is not found.
+        
+        remove(key):
+            Removes a key-value pair from the hash table. Returns True if the key was found and removed, False otherwise.
+    """
     def __init__(self, size=10):
         self.size = size
         self.table = [[] for _ in range(self.size)]  # List of lists for chaining

@@ -1,4 +1,68 @@
 class ArrayList:
+    """
+    A dynamic array class akin to a simplified Python list.
+
+    Attributes:
+        capacity (int): The current capacity of the array.
+        size (int): The number of elements in the array.
+        array (list): The underlying array storing elements.
+    """
+
+    """
+    Initializes an empty array list with an initial capacity of 1.
+    """
+
+    """
+    Creates a new array with the given capacity.
+
+    Args:
+        capacity (int): The capacity of the new array.
+
+    Returns:
+        list: A new array with the specified capacity.
+    """
+
+    """
+    Adds an item to the end of the array list. Resizes the array if necessary.
+
+    Args:
+        item: The item to be added to the array list.
+    """
+
+    """
+    Resizes the array to a new capacity.
+
+    Args:
+        new_capacity (int): The new capacity of the array.
+    """
+
+    """
+    Retrieves the item at the specified index.
+
+    Args:
+        index (int): The index of the item to retrieve.
+
+    Returns:
+        The item at the specified index.
+
+    Raises:
+        IndexError: If the index is out of bounds.
+    """
+
+    """
+    Returns the number of elements in the array list.
+
+    Returns:
+        int: The number of elements in the array list.
+    """
+
+    """
+    Returns a string representation of the array list.
+
+    Returns:
+        str: A string representation of the array list.
+    """
+
     def __init__(self):
         self.capacity = 1  # Initial capacity
         self.size = 0  # Number of elements

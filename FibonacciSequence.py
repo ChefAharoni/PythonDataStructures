@@ -1,4 +1,13 @@
 def fibonacci(n, memo={}):
+    """
+    Calculate the nth Fibonacci number using memoization.
+    Args:
+        n (int): The position in the Fibonacci sequence to calculate.
+        memo (dict, optional): A dictionary to store previously calculated Fibonacci numbers. Defaults to an empty dictionary.
+    Returns:
+        int: The nth Fibonacci number.
+    """
+    
     if n <= 1:
         return n
     if n not in memo:

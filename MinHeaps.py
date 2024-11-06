@@ -2,6 +2,24 @@ import sys
 
 
 class MinHeap:
+    """
+    A MinHeap implementation using a list.
+    Methods
+    -------
+    __init__():
+        Initializes an empty heap.
+    insert(key):
+        Inserts a new key into the heap.
+    extract_min():
+        Extracts and returns the minimum element from the heap.
+    _heapify_up(index):
+        Maintains the heap property by moving the element at the given index up.
+    _heapify_down(index):
+        Maintains the heap property by moving the element at the given index down.
+    get_min():
+        Returns the minimum element from the heap without removing it.
+    """
+
     def __init__(self):
         self.heap = []
 
