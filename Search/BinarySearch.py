@@ -30,6 +30,29 @@ def binary_search(arr, target):
     return -1  # Target not found
 
 
+def binary_search_with_overflow_check(array, target):
+    """
+    Perform a binary search on a sorted array to find the index of a target value, with overflow check.
+
+    Args:
+        arr (list): A list of elements sorted in ascending order.
+        target: The value to search for in the array.
+
+    Returns:
+        int: The index of the target value in the array if found, otherwise -1.
+    """
+    left, right = 0, len(array) - 1
+    while left <= right:
+        mid = left + (right - left) // 2  # Prevent overflow
+        if array[mid] == target:
+            return mid  # Target found
+        elif array[mid] < target:
+            left = mid + 1  # Search right half
+        else:
+            right = mid - 1  # Search left half
+    return -1  # Target not found
+
+
 # Example usage:
 numbers = [1, 2, 3, 4, 5]
 print(binary_search(numbers, 4))  # Output: 3
